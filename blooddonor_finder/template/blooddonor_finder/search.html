@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} blooddonor_finder {% endblock %}
+{% block css %}
+{% endblock %}
+
+{% block body %}
+
+    <!-- Search -->
+    <div class="search">
+      
+      <form action="{% url 'search' %}" method="POST">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            {{forms_search.select_blood_group}}
+            {{forms_search.select_location}}
+          </div>
+        <button type="submit" class="btn btn-outline-success">Search</button>
+
+      </form>
+    </div>
+
+
+   {% endblock  %}
